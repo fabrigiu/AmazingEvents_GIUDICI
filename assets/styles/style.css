@@ -1,0 +1,60 @@
+.top-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    padding: 1rem;
+}
+.bot-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(32, 32, 32, 0.466);
+    height: 25vh;
+}
+#logo{
+    width: 20vh;
+}
+/* nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+}
+nav a{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 2px solid black;
+    width: 6rem;
+} */
+.navbar-nav{
+    gap: 1rem;
+}
+.nav-item{ 
+    background-color: white;
+    border: 2px solid black;
+    width: 6rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+}
+
+main{
+    padding: 1rem;
+}
+.forms{
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+.checkform{
+    display: flex;
+    flex-direction: row;
+}
