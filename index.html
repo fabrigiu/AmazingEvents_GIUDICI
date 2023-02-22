@@ -14,49 +14,138 @@
 
 <body>
     <header>
-        <div class="bg-secondary top-header">
-            <img id="logo" src="./assets/img/LogoAmazingEvents.png" alt="">
-            <nav class="navbar navbar-expand-lg bg-secondary">
-                <div class="container-fluid">
-                    <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./pages/upcomingEvents.html">Upcoming
-                                    Events</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./pages/pastEvents.html">Past
-                                    Events</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./pages/contact.html">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./pages/stats.html">Stats</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- fix navbar later -->
+        <div class="top-header container-fluid p-3 d-flex">
+            <a href="##" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto">
+                <img id="logo" src="./assets/img/LogoAmazingEvents.png" alt="logo">
+            </a>
+            <nav class="navbar navbar-expand-md">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                            <a href="#" class="nav-link">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./pages/upcomingEvents.html" class="nav-link">
+                                Upcoming Events
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./pages/pastEvents.html" class="nav-link ">
+                                Past Events
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./pages/contact.html" class="nav-link">
+                                Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./pages/stats.html" class="nav-link">
+                                Stats
+                            </a>
+                        </li>
+                    </ul>
             </nav>
         </div>
+        </div>
         <div class="bot-header">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, assumenda enim. Voluptate doloremque
-                cum accusantium sed consequuntur repellat, quisquam fuga nisi ut ad? Dolorem expedita ea officiis ex
-                dolore! Voluptatibus.</p>
+            <!-- botones temporales -->
+            <a href="##"><img src="./assets/img/arrowLeft.png" alt="arrowLeft"></a>
+            <h1>Home</h1>
+            <a href="./pages/upcomingEvents.html"><img src="./assets/img/arrowRight.png" alt="arrowRight"></a>
         </div>
     </header>
-    <main>
-        <div class="forms">
-            form
+    <main class="container">
+        <div class="main-1 m-5 d-flex justify-content-between">
+            <div class="checkboxes">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="category1" />
+                    <label class="form-check-label" for="inlineCheckbox1">Category</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="category2" />
+                    <label class="form-check-label" for="inlineCheckbox2">Category</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="category3" />
+                    <label class="form-check-label" for="inlineCheckbox3">Category</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="category4" />
+                    <label class="form-check-label" for="inlineCheckbox4">Category</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="category5" />
+                    <label class="form-check-label" for="inlineCheckbox5">Category</label>
+                </div>
+            </div>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-dark" type="submit">Search</button>
+            </form>
         </div>
+        <section class="d-flex m-5 gap-3 justify-content-around flex-wrap">
+            <div class="card bg-dark" style="width: 18rem;">
+                <img src="./assets/img/Cinema.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-light">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card bg-dark" style="width: 18rem;">
+                <img src="./assets/img/Costume_Party.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-light">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card bg-dark" style="width: 18rem;">
+                <img src="./assets/img/Cinema.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-light">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card bg-dark" style="width: 18rem;">
+                <img src="./assets/img/Cinema.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-light">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card bg-dark" style="width: 18rem;">
+                <img src="./assets/img/Cinema.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-light">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card bg-dark" style="width: 18rem;">
+                <img src="./assets/img/Cinema.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-light">Go somewhere</a>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
 
