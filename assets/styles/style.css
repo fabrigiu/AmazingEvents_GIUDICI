@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 .top-header {
   background-color: #674188;
 }
@@ -57,4 +58,37 @@ input[type="checkbox"]:focus {
     background-color: #C3ACD0;
     color:#f7efe5;
     border: solid 1px #674188;
+}
+
+#tempbutton{
+  text-decoration: none;
+  color: #f7efe5;
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #674188;
+  padding: 1rem;
+}
+
+.btn, .btn:hover, .btn:active, .btn:visited {
+  background-color: #674188 !important;
+  border-color: #f7efe5 !important;
+}
+
+.btn-light, .btn-light:hover, .btn-light:active, .btn-light:visited {
+  background-color: #f7efe5 !important;
+  border-color: #674188 !important;
+}
+
+
+.card-foot{
+  display: flex;
+  justify-content: space-around;
+}
+.card-foot>p{
+  align-self: center;
+  margin-bottom: 0;
 }
