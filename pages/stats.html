@@ -9,51 +9,162 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/styles/style.css">
-    <title>Document</title>
+    <title>Amazing Events | Stats</title>
 </head>
 
 <body>
     <header>
-        <div class="top-header container-fluid p-3 d-flex">
-            <a href="##" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto">
+        <nav class="navbar navbar-expand-md top-header">
+            <div class="container-fluid">
                 <img id="logo" src="../assets/img/LogoAmazingEvents.png" alt="logo">
-            </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                <li>
-                    <a href="../index.html" class="nav-link">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        Upcoming Events
-                    </a>
-                </li>
-                <li>
-                    <a href="./pastEvents.html" class="nav-link ">
-                        Past Events
-                    </a>
-                </li>
-                <li>
-                    <a href="./contact.html" class="nav-link">
-                        Contact
-                    </a>
-                </li>
-                <li>
-                    <a href="./stats.html" class="nav-link">
-                        Stats
-                    </a>
-                </li>
-            </ul>
-        </div>
+                <div class="collapse navbar-collapse " id="navbar">
+                    <ul class="navbar-nav mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./pastEvents.html" class="nav-link">
+                                Past Events
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./contact.html" class="nav-link">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link disabled">
+                                Stats
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <div class="bot-header">
             <!-- botones temporales -->
-            <a href="../index.html"><img src="../assets/img/arrowLeft.png" alt="arrowLeft"></a>
-            <h1>Upcoming Events</h1>
-            <a href="./pastEvents.html"><img src="../assets/img/arrowRight.png" alt="arrowRight"></a>
+            <a id="tempbutton" href="./contact.html">
+                <h2>&lt;</h2>
+            </a>
+            <h1>Stats</h1>
+            <a id="tempbutton" href="##">
+                <h2>&gt;</h2>
+            </a>
         </div>
     </header>
+    <main class="container">
+        <section class="intro p-3">
+            <div class="gradient-custom-2 h-100">
+                <div class="mask d-flex align-items-center h-100">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="table-responsive gap-3">
+                                    <table class="table table-striped table-bordered mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th id="thheading" colspan="3" class="h1">Event Statistics</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Events with the highest porcentage of attendance</th>
+                                                <th>Events with the lowest porcentage of attendance</th>
+                                                <th>Events with the larger capacity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-striped table-bordered mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th id="thheading" colspan="3" class="h1">Upcoming events statistics by
+                                                    category</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Categories</th>
+                                                <th>Revenues</th>
+                                                <th>Percentage of attendance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-striped table-bordered mb-3">
+                                        <thead>
+                                            <tr>
+                                                <th id="thheading" colspan="3" class="h1">Past events statistics by
+                                                    category</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Categories</th>
+                                                <th>Revenues</th>
+                                                <th>Percentage of attendance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer>
         <div class="btn-group-lg gap-3">
             <button type="button" class="btn btn-outline-light bi bi-facebook">
@@ -66,8 +177,8 @@
         <h3>Cohort</h3>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

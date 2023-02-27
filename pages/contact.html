@@ -9,51 +9,79 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/styles/style.css">
-    <title>Document</title>
+    <title>Amazing Events | Contact</title>
 </head>
 
 <body>
     <header>
-        <div class="top-header container-fluid p-3 d-flex">
-            <a href="##" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto">
+        <nav class="navbar navbar-expand-md top-header">
+            <div class="container-fluid">
                 <img id="logo" src="../assets/img/LogoAmazingEvents.png" alt="logo">
-            </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                <li>
-                    <a href="../index.html" class="nav-link">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="./upcomingEvents.html" class="nav-link">
-                        Upcoming Events
-                    </a>
-                </li>
-                <li>
-                    <a href="./pastEvents.html" class="nav-link ">
-                        Past Events
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        Contact
-                    </a>
-                </li>
-                <li>
-                    <a href="./stats.html" class="nav-link">
-                        Stats
-                    </a>
-                </li>
-            </ul>
-        </div>
+                <div class="collapse navbar-collapse " id="navbar">
+                    <ul class="navbar-nav mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./pastEvents.html" class="nav-link">
+                                Past Events
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link disabled">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./stats.html" class="nav-link">
+                                Stats
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <div class="bot-header">
             <!-- botones temporales -->
-            <a href="./pastEvents.html"><img src="../assets/img/arrowLeft.png" alt="arrowLeft"></a>
-            <h1>Contact</h1>
-            <a href="./stats.html"><img src="../assets/img/arrowRight.png" alt="arrowRight"></a>
+            <a id="tempbutton" href="./pastEvents.html">
+                <h2>&lt;</h2>
+            </a>
+            <h1>Contact us</h1>
+            <a id="tempbutton" href="./stats.html">
+                <h2>&gt;</h2>
+            </a>
         </div>
     </header>
+    <main class="container">
+        <section class="m-5 cont-form">
+            <h2 class="d-none">Contact us</h2>
+            <form class="p-5 row gap-3">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-control">
+                    <label for="name">Your name</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="mail" class="form-control">
+                    <label for="mail">Your mail</label>
+                </div>
+                <div class="form-group">
+                    <textarea type="text" id="message" name="message" rows="3"
+                        class="form-control md-textarea"></textarea>
+                    <label for="message">Your message</label>
+                </div>
+
+                <button type="submit" class="btn col-md-1">Send</button>
+            </form>
+        </section>
+    </main>
     <footer>
         <div class="btn-group-lg gap-3">
             <button type="button" class="btn btn-outline-light bi bi-facebook">
@@ -66,8 +94,8 @@
         <h3>Cohort</h3>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
