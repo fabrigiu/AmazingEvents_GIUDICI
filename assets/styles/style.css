@@ -39,6 +39,7 @@ a[href="#"] {
 }
 body {
   background-color: #F7EFE5;
+  min-height: 100vh;
 }
 .main-1{
     align-items: center;
