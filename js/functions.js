@@ -12,7 +12,7 @@ function printCards(dataArray, container, path) {
   let cards = "";
   dataArray.forEach((data) => {
     cards += `<div class="card bg-dark" style="width: 18rem;">
-        <img src="${data.image}" class="card-img-top" alt="...">
+        <img src="${data.image}" class="card-img-top" style="height:12rem;" alt="...">
         <div class="card-body">
             <h5 class="card-title">${data.name}</h5>
             <p class="card-text">${data.description}</p>
