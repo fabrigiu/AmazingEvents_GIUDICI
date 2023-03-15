@@ -1,45 +1,29 @@
 import data from "./data.js";
+import {
+  printCards,
+  printChecks,
+  textFilter,
+  checkboxFilter,
+  filterUpcoming,
+} from "./functions.js";
 
 const eventData = [...data.events];
-const cardSectionUpcoming = document.getElementById('upcoming-cards');
+const cardSection = document.getElementById("card-section");
+const checkContainer = document.getElementById("checkbox-container");
+const input = document.querySelector("input");
+const path = './details.html';
 
+const upcomingData = filterUpcoming(eventData);
+printCards(upcomingData, cardSection, path);
+printChecks(upcomingData, checkContainer);
 
-function filterUpcoming(arr){
-    let aux = [] ;
-    for (let i = 0 ; i< arr.length ; i++) {
-        if(data.currentDate<arr[i].date){
-            aux.push(arr[i])
-        }
-    }
-    return aux;
-}
-
-let upcomingData = filterUpcoming(eventData);
-
-function createCards(dataArray) {
-    let shard = document.createDocumentFragment();
-  
-    for (const data of dataArray) {
-      let div = document.createElement("div");
-      div.className = "card bg-dark";
-      div.style.width = "18rem";
-      div.innerHTML = `
-          <img src="${data.image}" class="card-img-top" alt="...">
-          <div class="card-body">
-              <h5 class="card-title">${data.name}</h5>
-              <p class="card-text">${data.description}</p>
-              <div class="card-foot">
-                  <p>Price: ${data.price}</p>
-                 <a href="./details.html"  class="btn">Details</a>
-              </div>
-          </div>`;
-  
-      shard.appendChild(div);
-    }
-  
-    return shard;
-  }
-
-
-
-cardSectionUpcoming.appendChild(createCards(upcomingData));
+input.addEventListener("input", () => {
+  let firstFilter = textFilter(upcomingData, input.value);
+  let secondFilter = checkboxFilter(firstFilter);
+  printCards(secondFilter, cardSection, path);
+});
+checkContainer.addEventListener("change", () => {
+  let firstFilter = textFilter(upcomingData, input.value);
+  let secondFilter = checkboxFilter(firstFilter);
+  printCards(secondFilter, cardSection, path);
+});

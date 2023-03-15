@@ -1,30 +1,15 @@
 import data from "./data.js";
+import { printCards, printChecks, filters } from "./functions.js";
 
 const eventData = [...data.events];
 const cardSection = document.getElementById("card-section");
+const checkContainer = document.getElementById("checkbox-container");
+const input = document.querySelector("input");
+const path = './pages/details.html';
 
-function createCards(dataArray) {
-  let shard = document.createDocumentFragment();
+printChecks(eventData, checkContainer);
+printCards(eventData, cardSection, path);
 
-  for (const data of dataArray) {
-    let div = document.createElement("div");
-    div.className = "card bg-dark";
-    div.style.width = "18rem";
-    div.innerHTML = `
-        <img src="${data.image}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${data.name}</h5>
-            <p class="card-text">${data.description}</p>
-            <div class="card-foot">
-                <p>Price: ${data.price}</p>
-               <a href="./pages/details.html"  class="btn">Details</a>
-            </div>
-        </div>`;
+input.addEventListener("input", filters);
 
-    shard.appendChild(div);
-  }
-
-  return shard;
-}
-
-cardSection.appendChild(createCards(eventData));
+checkContainer.addEventListener("change", filters);
