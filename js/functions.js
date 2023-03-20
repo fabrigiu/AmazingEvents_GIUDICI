@@ -1,8 +1,16 @@
-import data from "./data.js";
-const eventData = [...data.events];
+const eventData = await fetch("../data/amazing.json")
+  .then((res) => res.json())
+  .then((data) => {
+    return data.events;
+  });
+const currentDate = await fetch("../data/amazing.json")
+.then((res) => res.json())
+.then((data) => {
+  return data.currentDate;
+});
 const input = document.querySelector("input");
 const cardSection = document.getElementById("card-section");
-const path = './pages/details.html'
+const path = "./pages/details.html";
 
 function printCards(dataArray, container, path) {
   if (dataArray.length == 0) {
@@ -40,11 +48,11 @@ function printChecks(array, container) {
 }
 
 function filterUpcoming(arr) {
-  const aux = arr.filter((d) => data.currentDate < d.date);
+  const aux = arr.filter((d) => currentDate < d.date);
   return aux;
 }
 function filterPast(arr) {
-  const aux = arr.filter((d) => data.currentDate > d.date);
+  const aux = arr.filter((d) => currentDate > d.date);
   return aux;
 }
 function checkboxFilter(arr) {
@@ -77,5 +85,5 @@ export {
   printChecks,
   filters,
   textFilter,
-  checkboxFilter
+  checkboxFilter,
 };

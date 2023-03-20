@@ -1,6 +1,8 @@
-import data from "./data.js";
-
-const eventData = [...data.events];
+const eventData = await fetch("../data/amazing.json")
+  .then((res) => res.json())
+  .then((data) => {
+    return data.events;
+  });
 const cardSection = document.getElementById("card-section");
 const queryString = location.search;
 const params = new URLSearchParams(queryString);
