@@ -128,7 +128,13 @@ footer > h3 {
 .table {
   background-color: #c3acd0;
   color: #f7efe5;
+  border: #674188 .2rem solid;
 }
+
+tbody td{
+  color: #674188;
+}
+
 .thheading {
   background-color: #674188;
 }

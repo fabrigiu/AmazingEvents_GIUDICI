@@ -1,22 +1,28 @@
-import { printCards, printChecks, filters } from "./functions.js";
-
-// const eventData = [...data.events];
+import { printCards, printChecks, textFilter, checkboxFilter } from "./functions.js";
 const cardSection = document.getElementById("card-section");
 const checkContainer = document.getElementById("checkbox-container");
 const input = document.querySelector("input");
-const path = './pages/details.html';
-const eventData  =  await fetch('../data/amazing.json')
-    .then(res => res.json())
-    .then((data)=> {
-    return data.events})
+const path = "./pages/details.html";
 
+async function fetchData() {
+  await fetch("../data/amazing.json")
+    .then((res) => res.json())
+    .then((data) => {
+      const eventData = data.events;
+      printChecks(eventData, checkContainer);
+      printCards(eventData, cardSection, path);
 
-console.log(eventData)
+      input.addEventListener("input", () => {
+        let firstFilter = textFilter(eventData, input.value);
+        let secondFilter = checkboxFilter(firstFilter);
+        printCards(secondFilter, cardSection, path);
+      });
 
-
-printChecks(eventData, checkContainer);
-printCards(eventData, cardSection, path);
-
-input.addEventListener("input", filters);
-
-checkContainer.addEventListener("change", filters);
+      checkContainer.addEventListener("change", () => {
+        let firstFilter = textFilter(eventData, input.value);
+        let secondFilter = checkboxFilter(firstFilter);
+        printCards(secondFilter, cardSection, path);
+      });
+    });
+}
+fetchData();

@@ -1,17 +1,3 @@
-const eventData = await fetch("../data/amazing.json")
-  .then((res) => res.json())
-  .then((data) => {
-    return data.events;
-  });
-const currentDate = await fetch("../data/amazing.json")
-.then((res) => res.json())
-.then((data) => {
-  return data.currentDate;
-});
-const input = document.querySelector("input");
-const cardSection = document.getElementById("card-section");
-const path = "./pages/details.html";
-
 function printCards(dataArray, container, path) {
   if (dataArray.length == 0) {
     container.innerHTML = `<h2 class="display-1 fw-bolder">No events found.</h2>`;
@@ -47,14 +33,18 @@ function printChecks(array, container) {
   container.innerHTML = checkboxes;
 }
 
-function filterUpcoming(arr) {
-  const aux = arr.filter((d) => currentDate < d.date);
+//filters the main array by date and creates a new one with the events subsequent to the current date
+function filterUpcoming(arr,date) {
+  const aux = arr.filter((d) => date < d.date);
   return aux;
 }
-function filterPast(arr) {
-  const aux = arr.filter((d) => currentDate > d.date);
+//filters the main array by date and creates a new one with the events prior to the current date
+function filterPast(arr,date) {
+  const aux = arr.filter((d) => date > d.date);
   return aux;
 }
+
+//captures all the checkboxes and filters the main array with the values of the checked inputs
 function checkboxFilter(arr) {
   let checkboxes = document.querySelectorAll("input[type='checkbox']");
   let arrayChecks = Array.from(checkboxes);
@@ -66,16 +56,13 @@ function checkboxFilter(arr) {
   }
   return arr;
 }
+
+//filters events by name with the search bar
 function textFilter(arr, text) {
   let filtered = arr.filter((data) =>
     data.name.toLowerCase().includes(text.toLowerCase())
   );
   return filtered;
-}
-function filters() {
-  let firstFilter = textFilter(eventData, input.value);
-  let secondFilter = checkboxFilter(firstFilter);
-  printCards(secondFilter, cardSection, path);
 }
 
 export {
@@ -83,7 +70,6 @@ export {
   filterUpcoming,
   filterPast,
   printChecks,
-  filters,
   textFilter,
   checkboxFilter,
 };
