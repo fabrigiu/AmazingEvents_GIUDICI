@@ -17,11 +17,12 @@ async function fetchData() {
 
 
       let arrfiltered= filteredByCategory(upcomingEvents,categoriesArrayUpcoming)
+      let arrFilteredPast = filteredByCategory(pastEvents,categoriesArrayPast)
       console.log(categoriesArrayUpcoming);
       printTr(table1,hPercent,lPercent,largestCapacity(eventData));
 
       printCategoryRows(table2,arrfiltered)
-      printCategoryRows(table3,categoriesArrayPast)
+      printCategoryRows(table3,arrFilteredPast)
     });
 }
 fetchData();
@@ -46,21 +47,43 @@ function filteredByCategory( arrayEvents, arrayCategories ){
     arrAux.push(aux)
   })
   console.log(arrAux)
-  return arrAux; 
+
+  let newarr =[] ;
+  arrAux.forEach(e => {
+    let auxAssist=0
+    let auxPrice=0
+    let auxCategory='';
+    let auxCapacity=0;
+    e.forEach(a=>{
+      let attest=0;
+      a.assistance ? (attest = a.assistance) : (attest = a.estimate);
+      auxAssist += attest;
+      auxPrice += a.price;
+      auxCategory = a.category;
+      auxCapacity += a.capacity;
+    })
+    let auxObject = {
+      category : auxCategory,
+      price: auxPrice,
+      capacity:auxCapacity,
+      assistance:auxAssist
+    }
+    newarr.push(auxObject)
+  })
+  console.log(newarr);
+  return newarr; 
 }
 
 
 function printCategoryRows(container, array){
   let rows = "";
-  let attest= 0;
   for (const category of array) {
-    category.assistance ? (attest = category.assistance) : (attest = category.estimate);
-    let percent = (attest * 100) / category.capacity;
-    let revenue = category.price * category.attest
+    let percent = (category.assistance * 100) / category.capacity;
+    let revenue = category.price * category.assistance
     rows += `<tr>
                <td>${category.category}</td>
                <td>${revenue}</td>
-               <td>${percent}</td>
+               <td>${percent.toFixed(2)}%</td>
               </tr>`;
   };
   container.innerHTML = rows;
