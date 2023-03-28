@@ -132,7 +132,16 @@ footer > h3 {
 }
 
 tbody td{
-  color: #674188;
+  color: #674188!important;
+  font-weight: bold!important; 
+}
+tbody a{
+  color: #674188!important;
+  font-weight: bold!important; 
+  text-decoration: none !important;
+}
+tbody a:hover,a:active{
+  color: #f7efe5 !important;
 }
 
 .thheading {

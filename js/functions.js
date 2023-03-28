@@ -65,6 +65,115 @@ function textFilter(arr, text) {
   return filtered;
 }
 
+//-------------------Stats Functions----------------------------
+
+
+//------------Event row------------------
+// returns the event with the highest % of assistance
+function highestPercentage(array) {
+  let max = 0;
+  let maxObj;
+  let attest = 0;
+  array.forEach((e) => {
+    e.assistance ? (attest = e.assistance) : (attest = e.estimate);
+    let percent = (attest * 100) / e.capacity;
+    if (percent > max) {
+      maxObj = e;
+      max = percent;
+    }
+  });
+  return maxObj;
+}
+// returns the event with the lowest % of assistance
+function lowestPercentage(array) {
+  let min = 101;
+  let minObj;
+  let attest = 0;
+  array.forEach((e) => {
+    e.assistance ? (attest = e.assistance) : (attest = e.estimate);
+    let percent = (attest * 100) / e.capacity;
+    if (percent < min) {
+      minObj = e;
+      min = percent;
+    }
+  });
+  return minObj;
+}
+//returns the event with the largest capacity
+function largestCapacity(array) {
+  let event = array.sort((a, b) => b.capacity - a.capacity)[0];
+  return event;
+}
+//prints the table row with the event stats and a link to its details page
+function printTr(container, array) {
+  let hPercent = highestPercentage(array);
+  let lPercent = lowestPercentage(array);
+  let lc = largestCapacity(array);
+  container.innerHTML = `<tr>
+                             <td><a target="blank" href="./details.html?id=${hPercent._id}">${hPercent.name}</a></td>
+                             <td><a target="blank" href="./details.html?id=${lPercent._id}">${lPercent.name}</a></td>
+                             <td><a target="blank" href="./details.html?id=${lc._id}">${lc.name}</a></td>
+                          </tr>`;
+}
+
+//------------Category rows------------------
+
+//returns an array of all the categories
+function mapCategories(array) {
+  return [...new Set(array.map((event) => event.category))];
+}
+//returns an array with the sum of all the price, assistance and capacity of each category
+function filteredByCategory(arrayEvents, arrayCategories) {
+  let arrAux = [];
+  arrayCategories.forEach((category) => {
+    let aux = arrayEvents.filter(
+      (event) => event.category.toLowerCase() == category.toLowerCase()
+    );
+    arrAux.push(aux);
+  });
+
+  let newarr = [];
+  arrAux.forEach((e) => {
+    let auxAssist = 0;
+    let auxPrice = 0;
+    let auxCategory = "";
+    let auxCapacity = 0;
+    e.forEach((a) => {
+      let attest = 0;
+      a.assistance ? (attest = a.assistance) : (attest = a.estimate);
+      auxAssist += attest;
+      auxPrice += a.price;
+      auxCategory = a.category;
+      auxCapacity += a.capacity;
+    });
+    let auxObject = {
+      category: auxCategory,
+      price: auxPrice,
+      capacity: auxCapacity,
+      assistance: auxAssist,
+    };
+    newarr.push(auxObject);
+  });
+  return newarr;
+}
+//prints a row for each category and its stats
+function printCategoryRows(container, array) {
+  let rows = "";
+  for (const category of array) {
+    let percent = (category.assistance * 100) / category.capacity;
+    let revenue = category.price * category.assistance;
+    rows += `<tr>
+               <td>${category.category}</td>
+               <td>&#36;${revenue}</td>
+               <td>${percent.toFixed(2)}%</td>
+              </tr>`;
+  }
+  container.innerHTML = rows;
+}
+
+
+
+
 export {
   printCards,
   filterUpcoming,
@@ -72,4 +181,8 @@ export {
   printChecks,
   textFilter,
   checkboxFilter,
+  printTr,
+  mapCategories,
+  filteredByCategory,
+  printCategoryRows,
 };
